@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-image: url(./images/gradient.png);
+}
+
+.button {
+  background-color: #EF295E;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.logo-img {
+  width: 70%;
+}
+
+.banner-container {
+  padding: 20px;
+  width: 64%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-container {
+  width: 36%;
+  background-color: rgba(255, 255, 255, 0.82);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  position: relative;
+  background-image: url(./images/IMG_-1.png);
+  height: 89vh;
+  max-width: 940px;
+  margin: 30px auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  height: 55%;
+  justify-content: space-between;
+}
+
+.text {
+  color: white;
+}
+
+.heading-text {
+  font-size: 62px;
+  font-weight: 500;
+}
+
+.p-text {
+  font-size: 12px;
+}
+
+.link-text {
+  color: #EF295E;
+}
+
+.err-msg {
+  text-align: center;
+  font-size: 14px;
+  color: #cc0000;
+}
+
+.form-heading {
+  color: #2B2B2B;
+  font-size: 22px;
+  font-weight: 100;
+  text-align: center;
+  margin: 0 30px;
+}
+
+.inner-form {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  margin: 10px 0;
+}
+
+.inner-form h2, p {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+input {
+  border: 1px solid #C4C4C4;
+  border-radius: 5px;
+  outline: 0;
+  font-size: 14px;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+}
+
+.form-heading2 {
+  color: #2B2B2B;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 100;
+}
+
+.form-para {
+  text-align: center;
+}
+
+.form-link {
+  color: #2B2B2B;
+  font-weight: 600;
+}
+
+::placeholder {
+  color: #C4C4C4;
+  font-size: 12px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  margin-right: 5px;
+}
+
+.center-text {
+  text-align: center;
+  margin: 0 20px;
+  font-size: 11px;
+}
+
+.footer-para {
+  color: #939393;
+  font-size: 9px;
+  text-align: center;
+  border-top: 1px solid #939393;
+  padding-top: 10px;
+}
+
+.login-form {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.login-font-color {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

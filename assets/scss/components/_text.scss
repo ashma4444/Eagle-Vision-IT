@@ -1,0 +1,24 @@
+.text{
+    color: $font_color;
+}
+
+.heading-text{
+    font-size: 62px;
+    font-weight: 500;
+    
+}
+
+.p-text{
+    font-size: 12px;
+}
+
+.link-text{
+    color: $primary_color;
+}
+
+.err-msg{
+    text-align: center;
+    font-size: 14px;
+    color: #cc0000;
+}
+

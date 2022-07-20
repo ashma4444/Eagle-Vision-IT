@@ -1,0 +1,36 @@
+.banner-container{
+    padding: 20px;
+    width: 64%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-container{
+    width: 36%;
+    background-color: rgba(255, 255, 255, 0.82);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+}
+
+.main-container{
+    position: relative;
+    background-image: url(./images/IMG_-1.png);
+    height: 89vh;
+    max-width: 940px;
+    margin: 30px auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    height: 55%;
+    justify-content: space-between;
+}
