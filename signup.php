@@ -31,7 +31,7 @@
             <!-- <form action="controller/signup_validation.php" method="post" class="inner-form"> -->
             <form action="controller/form-action.php" method="post" class="signup inner-form">
                 <h2 class="form-heading2">Sign Up</h2>
-                <p class="p-text form-para">Already Have an account?<a href="login.php" class="form-link">Login Now</a></p>
+                <p class="p-text form-para">Already Have an account?<a href="index.php" class="form-link">Login Now</a></p>
 
                 <div class="input-container">
                     <label for="name">Full Name</label>
