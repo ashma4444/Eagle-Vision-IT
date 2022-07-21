@@ -1,37 +1,3 @@
-<?php
-include "conn.php";
-
-  if (isset($_POST['submit'])) {
-    $validation = true;
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // hashing password
-    // $secured_pass = password_hash($password, PASSWORD_DEFAULT);
-    $enc_pass = md5($password);
-
-
-    if(empty($name) || empty($email) || empty($password)){
-        $validation = false;
-    }
-    else{
-        if(strlen($password) <6){
-            $validation = false; 
-        }
-    }
-
-    if($validation == true){
-        $sql = "INSERT INTO `user` (`name`, `email`, `password`) VALUES ('$name', '$email','$enc_pass')";
-        $result = $conn->query($sql);
-        header("location: index.php");
-    }
-
-    $conn->close(); 
-  }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +29,7 @@ include "conn.php";
             <!-- <div class="err-msg" id="message"></div> -->
 
             <!-- <form action="controller/signup_validation.php" method="post" class="inner-form"> -->
-            <form action="" method="post" class="signup inner-form">
+            <form action="controller/form-action.php" method="post" class="signup inner-form">
                 <h2 class="form-heading2">Sign Up</h2>
                 <p class="p-text form-para">Already Have an account?<a href="login.php" class="form-link">Login Now</a></p>
 
@@ -93,7 +59,7 @@ include "conn.php";
                     <p class="p-text">Sign up for email updates.</p>
                 </div>
 
-                <button class="button" type="submit" name="submit" value="submit">SIGN UP</button>
+                <button class="button" type="submit" name="signup_form" value="submit">SIGN UP</button>
 
                 <p class="center-text">By continuing, you agree to accept our Privacy Policy & Terms of Service.</p>
             </form>

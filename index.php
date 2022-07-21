@@ -1,36 +1,3 @@
-<?php 
-    session_start();      
-    include('conn.php'); 
-    if (isset($_POST['email']) && isset($_POST['password'])) {
-        $email = $_POST['email'];  
-        $password = $_POST['password'];  
-
-        $dec_pass = md5($password);
-          
-        $sql = "select * from user where email = '$email' and password = '$dec_pass'";  
-        // echo($sql);
-        $result = mysqli_query($conn, $sql);   
-        $count = mysqli_num_rows($result);  
-
-        // echo($count);
-        if($count == 1){  
-            echo "<h1><center> Login successful </center></h1>";  
-        }  
-        else{  
-            echo "<h1> Login failed. Invalid email or password.</h1>";  
-        }  
-    } 
-    $conn->close(); 
-?>  
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +25,7 @@
 
             <span class="message"> </span>
 
-            <form action="" method="post" class="login inner-form">
+            <form action="controller/form-action.php" method="post" class="login inner-form" id="form-submit">
                 <h2 class="form-heading2 login-font-color">Login</h2>
 
                 <div id="message" style="color: #cc0000; font-size: 14px; text-align:center; margin-top: 15px"> </div>
@@ -78,7 +45,7 @@
                     </span>
                 </div>
 
-                <button class="button" type="submit" name="submit" value="submit">LOGIN</button>
+                <button class="button" type="submit" name="login_form" value="submit">LOGIN</button>
 
             </form>
 
@@ -100,6 +67,26 @@
         $("#closed-eye").show();
         $("#open-eye").hide();
         $("#password").attr('type', 'password');
+    });
+
+    $("#form-submit").submit(function(){
+        var email = jQuery("#email").val();
+        var password = jQuery("#password").val();
+        
+        if(email == "" && password == ""){
+            $("#message").html("Empty fields found");
+            return false;
+        }
+
+        else if(email == ""){
+            $("#message").html("Name is empty");
+            return false;
+        }
+
+        else if(password == ""){
+            $("#message").html("Password is empty");
+            return false;
+        }
     });
 </script>
 
