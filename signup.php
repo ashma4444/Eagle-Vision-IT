@@ -8,7 +8,8 @@ include "conn.php";
     $password = $_POST['password'];
 
     // hashing password
-    $secured_pass = password_hash($password, PASSWORD_DEFAULT);
+    // $secured_pass = password_hash($password, PASSWORD_DEFAULT);
+    $enc_pass = md5($password);
 
 
     if(empty($name) || empty($email) || empty($password)){
@@ -21,9 +22,9 @@ include "conn.php";
     }
 
     if($validation == true){
-        $sql = "INSERT INTO `user` (`name`, `email`, `password`) VALUES ('$name', '$email','$secured_pass')";
+        $sql = "INSERT INTO `user` (`name`, `email`, `password`) VALUES ('$name', '$email','$enc_pass')";
         $result = $conn->query($sql);
-        header("location: login.php");
+        header("location: index.php");
     }
 
     $conn->close(); 
@@ -39,8 +40,10 @@ include "conn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style.css">
-    <script type="text/javascript" src="./assets/js/signup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/483c49b5ee.js" crossorigin="anonymous"></script>
 
+    <script type="text/javascript" src="./assets/js/signup.js"></script>
 </head>
 
 <body>
@@ -49,7 +52,7 @@ include "conn.php";
             <img src="./assets/images/logo.png" class="logo-img" alt="">
             <div class="text-container">
                 <h1 class="heading-text text">Welcome to eaglevision it</h1>
-                <p class="text p-text">Already Have an account?<a href="login.php" class="link-text">Login Now</a></p>
+                <p class="text p-text">Already Have an account?<a href="index.php" class="link-text">Login Now</a></p>
             </div>
         </div>
 
@@ -60,18 +63,30 @@ include "conn.php";
             <!-- <div class="err-msg" id="message"></div> -->
 
             <!-- <form action="controller/signup_validation.php" method="post" class="inner-form"> -->
-            <form action="" method="post" class="inner-form" onsubmit="return validation()">
+            <form action="" method="post" class="signup inner-form">
                 <h2 class="form-heading2">Sign Up</h2>
                 <p class="p-text form-para">Already Have an account?<a href="login.php" class="form-link">Login Now</a></p>
 
-                <label for="name">Full Name</label>
-                <input type="text" name="name" id="name">
+                <div class="input-container">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" id="name">
+                </div>
 
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email">
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Must be at least 6 characters">
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                </div>
+
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Must be at least 6 characters">
+                    
+                    <span class="eye-container"> 
+                        <i class="fa-solid fa-eye-slash" id="closed-eye"></i> 
+                        <i class="fa-solid fa-eye" id="open-eye"></i>
+                    </span>
+                </div>
 
                 <div class="checkbox-container">
                     <input type="checkbox" class="checkbox">
@@ -83,12 +98,26 @@ include "conn.php";
                 <p class="center-text">By continuing, you agree to accept our Privacy Policy & Terms of Service.</p>
             </form>
 
-            
+
             <div class="footer">
                 <p class="footer-para">Copyright © 2022 eaglevisionit.com Terms & Conditions | Privacy policy</p>
             </div>
         </div>
     </div>
 </body>
+
+<script>
+    $("#closed-eye").click(function(){
+        $("#closed-eye").hide();
+        $("#open-eye").show();
+        $("#password").attr('type', 'text');
+    });
+
+    $("#open-eye").click(function(){
+        $("#closed-eye").show();
+        $("#open-eye").hide();
+        $("#password").attr('type', 'password');
+    });
+</script>
 </html>
 

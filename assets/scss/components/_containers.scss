@@ -34,3 +34,25 @@
     height: 55%;
     justify-content: space-between;
 }
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    i{
+        font-size: 12px;
+        color: $form-text;
+    }
+}
+
+.eye-container{
+    position: absolute;
+    right: 10px;
+    top: 22px;
+
+    #open-eye{
+        display: none;
+    }
+}
+
+
