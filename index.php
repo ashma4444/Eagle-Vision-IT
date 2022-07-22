@@ -8,27 +8,30 @@
     <link rel="stylesheet" href="./assets/style.css">
     <script src="https://kit.fontawesome.com/483c49b5ee.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="./assets/js/login.js"></script>
+    <script type="text/javascript" src="./assets/js/password.js"></script>
+
+
     
 </head>
 <body>
+    <div id="message"> </div>
+
     <div class="main-container">
         <div class="banner-container">
             <img src="./assets/images/logo.png" class="logo-img" alt="">
             <div class="text-container">
                 <h1 class="heading-text text">Welcome to eaglevision it</h1>
-                <p class="text p-text">Don't have an account?<a href="signup.php" class="link-text">Create yours now</a></p>
+                <p class="text p-text banner-p">Don't have an account?<a href="signup.php" class="link-text">Create yours now</a></p>
             </div>
         </div>
 
         <div class="form-container login-form">
             <h1 class="form-heading login-font-color">Share your awesomeness</h1>
 
-            <span class="message"> </span>
-
             <form action="controller/form-action.php" method="post" class="login inner-form" id="form-submit">
                 <h2 class="form-heading2 login-font-color">Login</h2>
-
-                <div id="message" style="color: #cc0000; font-size: 14px; text-align:center; margin-top: 15px"> </div>
 
                 <div class="input-container">
                     <label for="email">Email</label>
@@ -39,9 +42,8 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="Must be at least 6 characters">
                     
-                    <span class="eye-container"> 
-                        <i class="fa-solid fa-eye-slash" id="closed-eye"></i> 
-                        <i class="fa-solid fa-eye" id="open-eye"></i>
+                    <span class="eye-container" id="eye-click"> 
+                        <i class="fa-solid fa-eye-slash" id="eye"></i> 
                     </span>
                 </div>
 
@@ -55,39 +57,4 @@
         </div>
     </div>
 </body>
-
-<script>
-    $("#closed-eye").click(function(){
-        $("#closed-eye").hide();
-        $("#open-eye").show();
-        $("#password").attr('type', 'text');
-    });
-
-    $("#open-eye").click(function(){
-        $("#closed-eye").show();
-        $("#open-eye").hide();
-        $("#password").attr('type', 'password');
-    });
-
-    $("#form-submit").submit(function(){
-        var email = jQuery("#email").val();
-        var password = jQuery("#password").val();
-        
-        if(email == "" && password == ""){
-            $("#message").html("Empty fields found");
-            return false;
-        }
-
-        else if(email == ""){
-            $("#message").html("Name is empty");
-            return false;
-        }
-
-        else if(password == ""){
-            $("#message").html("Password is empty");
-            return false;
-        }
-    });
-</script>
-
 </html>

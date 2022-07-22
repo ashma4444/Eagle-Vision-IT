@@ -1,48 +1,66 @@
+@import 'responsive';
+
 .form-heading{
     color: $form_text;
-    font-size: 22px;
+    font-size: 2.2rem;
     font-weight: 100;
     text-align: center;
-    margin: 0 30px;
+    margin: 0 3rem;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .inner-form{
-    height: 90%;
     display: flex;
     flex-direction: column;
-    // justify-content: space-evenly;
-    padding: 0 30px;
-    margin: 10px 0;
+    justify-content: center;
+    height: 82%;
+
+    @include for-phone-only {    
+        padding: 0;
+    }
+  
+     @include for-tablet-portrait-up{
+        padding: 0 1rem;
+     }
+    @include for-tablet-landscape-up{
+        padding: 0 2rem;
+    }
+
+    @include for-desktop-up{
+        padding: 0 3rem;
+    }
 }
 
 .inner-form h2, p{
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
 label{
-    font-size: 12px;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
 }
 
 input{
-    border: 1px solid #C4C4C4;
-    border-radius: 5px;
+    border: .1rem solid #C4C4C4;
+    border-radius: .5rem;
     outline: 0;
-    font-size: 14px;
-    padding: 5px 10px;
-    margin-bottom: 15px;
+    font-size: 1.4rem;
+    padding: .5rem 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-heading2{
     color: $form_text;
-    font-size: 18px;
+    font-size: 1.8rem;
     text-align: center;
     font-weight: 100;
 }
 
 .form-para{
     text-align: center;
-    // margin-bottom: 15px;
 }
 
 .form-link{
@@ -52,21 +70,21 @@ input{
 
 ::placeholder{
     color: $placeholder_color;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 .checkbox-container{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .checkbox{
-    margin-right: 5px;
+    margin-right: .5rem;
 }
 
 .center-text{
     text-align: center;
-    margin: 0 20px;
-    font-size: 11px;
+    margin: 0 1rem;
+    font-size: 1.1rem;
 }

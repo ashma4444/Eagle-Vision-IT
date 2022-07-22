@@ -1,24 +1,46 @@
+@import 'responsive';
+
 .text{
     color: $font_color;
 }
 
 .heading-text{
-    font-size: 62px;
     font-weight: 500;
-    
+    font-size: 6rem;
+    @include for-phone-small {    
+        margin-bottom: 2rem;
+        font-size: 5rem;
+    }
+    @include for-phone-only {    
+        text-align: center;
+    }
+    @include for-desktop-up{
+        margin: 0 2rem 0 0;
+    }
 }
 
 .p-text{
-    font-size: 12px;
+    font-size: 1.2rem;
+    @include for-phone-only {    
+        text-align: center;
+    }
+}
+
+.banner-p{
+    @include for-phone-small {    
+        margin-bottom: 2rem;
+    }
 }
 
 .link-text{
     color: $primary_color;
+    display: inline-block;
+    margin-left: .5rem;
 }
 
 .err-msg{
     text-align: center;
-    font-size: 14px;
+    font-size: 1.4rem;
     color: #cc0000;
 }
 

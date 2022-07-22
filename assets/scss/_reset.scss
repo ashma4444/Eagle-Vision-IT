@@ -1,14 +1,55 @@
+@import './components/responsive';
+
+
 *{
     margin: 0;
     padding: 0;
     font-family: $primary_font;
     text-decoration: none;
   }
+
+html{
+  font-size: 62.5%;
+
+  @include for-phone-only {    
+      font-size: 40%;
+  }
+  @include for-tablet-portrait-up{
+      font-size: 50%;
+  }
+  @include for-tablet-landscape-up{
+    font-size: 56%;
+  }
+  @include for-desktop-up{
+    font-size: 62.5%;
+  }
+}
   
   body{
-    background-image: url(./images/gradient.png);
+    background-image:url(../assets/images/logo-shape.png), linear-gradient(250deg, rgba(239,41,94,1) 38%, rgba(239,132,41,1) 100%); 
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    #message{
+      background-color: #ffff;
+      color: #cc0000;
+      font-weight: 600;
+      padding: .6rem 1rem;
+      font-size: 1.2rem;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-top-left-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem;
+      position: absolute;
+      z-index: 11;
+      top: 15%;
+      right: 0;
+    }
   }
 
-  
+
 
   

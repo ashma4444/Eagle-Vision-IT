@@ -1,70 +1,54 @@
-// function eyeFunc(){
-//     alert("Hello");
-//     // var open = document.getElementById("open-eye");
-//     // var close = document.getElementById("closed-eye");
-//     // var pass= document.getElementById("password");
+$( document ).ready(function() {
+    $("#message").hide();
 
-
-//     // if(pass.type === 'password'){
-
-//     // }
-
-// }
-
-
-// jQuery( document ).on( 'click','#closed-eye', function(){
-//     alert("hiiiii");
-// });
-
- 
- 
- jQuery( document ).on( 'submit','.signup', function(){
+    $( document ).on( 'submit','.signup', function(){
         var name = jQuery("#name").val();
         var email = jQuery("#email").val();
         var password = jQuery("#password").val();
    
-        // if(name =="" || email=="" || password==""){
-        //     document.getElementById("message").innerHTML = "Empty fields found";
-        //    //   alert("Empty fields found");
-        //    return false;
-        // }
-
         if(name=="" && email=="" && password ==""){
+            $("#message").slideDown(500);
             document.getElementById("message").innerHTML = "All fields are empty";
             return false;
-        }
-
-        else if(name==""){
+        }else if(name == "" && email == ""){
+            $("#message").slideDown(500);
+            document.getElementById("message").innerHTML = "Name and email are empty";
+            return false;
+        }else if(name == "" && password == ""){
+            $("#message").slideDown(500);
+            document.getElementById("message").innerHTML = "Name and password are empty";
+            return false;
+        }else if(email == "" && password == ""){
+            $("#message").slideDown(500);
+            document.getElementById("message").innerHTML = "Email and password are empty";
+            return false;
+        }else if(name==""){
+            $("#message").slideDown(500);
             document.getElementById("message").innerHTML = "Name is empty";
             return false;
-        }
-
-        else if(email==""){
+        }else if(email==""){
+            $("#message").slideDown(500);
             document.getElementById("message").innerHTML = "Email is empty";
             return false;
 
-        }
-
-        else if(password==""){
+        }else if(password==""){
+            $("#message").slideDown(500);
             document.getElementById("message").innerHTML = "Password is empty";
             return false;
-        }
-
-        else{
+        }else{
             if(password.length < 6){
+                $("#message").slideDown(500);
                 document.getElementById("message").innerHTML = "Password must contain atleast 6 characters";
                 return false;
            }
         }
- });
+    });
+});
+ 
+ 
 
 
 
-// password eye 
-//  $("#closed-eye").click(function(){
-//     alert("Hello");
-//     $("#closed-eye").hide();
-//     $("#open-eye").css("display","block")
-//  });
+
 
 

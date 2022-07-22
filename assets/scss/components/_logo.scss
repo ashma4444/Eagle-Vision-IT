@@ -1,4 +1,8 @@
 .logo-img{
     width: 70%;
+    @include for-phone-only {    
+        width: 50%;
+        margin: 0 auto
+    }
 }
 

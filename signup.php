@@ -10,25 +10,26 @@
     <script src="https://kit.fontawesome.com/483c49b5ee.js" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="./assets/js/signup.js"></script>
+    <script type="text/javascript" src="./assets/js/password.js"></script>
 </head>
 
 <body>
+    <div id="message"></div>
+
+    <!-- <div id="message" style="color: #cc0000; font-size: 14px; text-align:center; margin-top: 15px"> </div> -->
+
     <div class="main-container">
         <div class="banner-container">
             <img src="./assets/images/logo.png" class="logo-img" alt="">
             <div class="text-container">
                 <h1 class="heading-text text">Welcome to eaglevision it</h1>
-                <p class="text p-text">Already Have an account?<a href="index.php" class="link-text">Login Now</a></p>
+                <p class="text p-text banner-p">Already Have an account?<a href="index.php" class="link-text">Login Now</a></p>
             </div>
         </div>
 
         <div class="form-container">
             <h1 class="form-heading">Share your awesomeness</h1>
 
-            <div id="message" style="color: #cc0000; font-size: 14px; text-align:center; margin-top: 15px"> </div>
-            <!-- <div class="err-msg" id="message"></div> -->
-
-            <!-- <form action="controller/signup_validation.php" method="post" class="inner-form"> -->
             <form action="controller/form-action.php" method="post" class="signup inner-form">
                 <h2 class="form-heading2">Sign Up</h2>
                 <p class="p-text form-para">Already Have an account?<a href="index.php" class="form-link">Login Now</a></p>
@@ -48,9 +49,8 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="Must be at least 6 characters">
                     
-                    <span class="eye-container"> 
-                        <i class="fa-solid fa-eye-slash" id="closed-eye"></i> 
-                        <i class="fa-solid fa-eye" id="open-eye"></i>
+                    <span class="eye-container" id="eye-click"> 
+                        <i class="fa-solid fa-eye-slash" id="eye"></i> 
                     </span>
                 </div>
 
@@ -70,20 +70,8 @@
             </div>
         </div>
     </div>
+
+    <!-- <img src="assets/images/Group 1529.png" alt=""> -->
 </body>
-
-<script>
-    $("#closed-eye").click(function(){
-        $("#closed-eye").hide();
-        $("#open-eye").show();
-        $("#password").attr('type', 'text');
-    });
-
-    $("#open-eye").click(function(){
-        $("#closed-eye").show();
-        $("#open-eye").hide();
-        $("#password").attr('type', 'password');
-    });
-</script>
 </html>
 
