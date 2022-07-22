@@ -61,14 +61,8 @@
 
 
             $count = mysqli_num_rows($result);  
-    
-            // // echo($count);
-            if($count == 1){  
-                echo "<h4><center> Login successful </center></h4>";  
-            }  
-            else{  
-                echo "<h4> <center> Login failed. Invalid email or password. </center> </h4>";  
-            }  
+
+            return $count;
         }
     }
 

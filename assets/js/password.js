@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    // here this = eye-container i
+
     $( document ).on( 'click', '.eye-container i', function(){
         $( this ).toggleClass("fa-eye-slash");
         $( this ).toggleClass("fa-eye");

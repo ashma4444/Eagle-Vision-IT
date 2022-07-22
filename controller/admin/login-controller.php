@@ -2,7 +2,9 @@
 require_once '../model/connection.php';
 class Login extends DatabaseConnection{
     public function user_check( $email = false, $password = false ){
+        session_start();
         if ( $email && $password ) {
+            $name;
              
             $dec_pass = md5($password);
               
@@ -14,17 +16,21 @@ class Login extends DatabaseConnection{
                 'password' => $dec_pass
             );
 
-            $this-> select_query( array('id', 'name'), 'user', $fields, 'and');
+            $count = $this-> select_query( array('*'), 'user', $fields, 'and');
 
-            // $count = mysqli_num_rows($result);  
-    
-            // // echo($count);
-            // if($count == 1){  
-            //     echo "<h4><center> Login successful </center></h4>";  
-            // }  
-            // else{  
-            //     echo "<h4> <center> Login failed. Invalid email or password. </center> </h4>";  
-            // }  
+            $sql= "select * from user where email = '$email' and password = '$dec_pass'";
+            $result = mysqli_query($this -> connection, $sql);
+            while ($row1 = mysqli_fetch_array($result)) {
+                $name = $row1['name'];
+            }
+                
+            if($count == 1){  
+                $_SESSION['name'] = $name; 
+                $_SESSION['email'] = $email; 
+                header("location: ../welcome.php");
+            }else{  
+                echo("LOGIN FAILED! Invalid username or password.");
+            }  
         } 
     }
 }

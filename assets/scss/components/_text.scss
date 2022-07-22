@@ -5,17 +5,22 @@
 }
 
 .heading-text{
-    font-weight: 500;
-    font-size: 6rem;
+    font-weight: 600;
     @include for-phone-small {    
         margin-bottom: 2rem;
-        font-size: 5rem;
+        font-size: 3rem;
     }
     @include for-phone-only {    
         text-align: center;
+        font-size: 4rem;
     }
+    @include for-tablet-portrait-up{
+        font-size: 5.5rem;
+     }
     @include for-desktop-up{
         margin: 0 2rem 0 0;
+        font-size: 6rem;
+
     }
 }
 
@@ -42,5 +47,11 @@
     text-align: center;
     font-size: 1.4rem;
     color: #cc0000;
+}
+
+.center-text{
+    text-align: center;
+    // margin: 0 1rem;
+    font-size: 1.1rem;
 }
 
