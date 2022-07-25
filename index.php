@@ -11,12 +11,7 @@
     <link rel="stylesheet" href="./assets/style.css">
     <script src="https://kit.fontawesome.com/483c49b5ee.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <script type="text/javascript" src="./assets/js/login.js"></script>
-    <script type="text/javascript" src="./assets/js/password.js"></script>
-
-
-    
+    <script type="text/javascript" src="./build/scripts.js"></script>
 </head>
 <body>
     <div id="message" class="msg hide"></div>

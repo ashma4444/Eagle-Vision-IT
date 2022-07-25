@@ -1,8 +1,11 @@
 $( document ).ready(function() {
+    $('.hide').hide();
+
     $("#form-submit").submit(function(){
         function showAnimation(msg){
             messageWrapper.removeClass("hide");
             messageWrapper.addClass("show").text(msg);
+            $('.show').show();
         }
 
         function hideAnimation(){
@@ -10,7 +13,10 @@ $( document ).ready(function() {
                 setTimeout( function(){
                     messageWrapper.removeClass("show");
                     messageWrapper.addClass("hide");
-                }, 6000 );
+                }, 5000 );
+                setTimeout( function(){     
+                    $('.hide').hide();    
+                }, 7000 );
             }
         }
         var messageWrapper = $("#message");

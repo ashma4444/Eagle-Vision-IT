@@ -1,0 +1,24 @@
+{
+  "name": "eagle-vision-it",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashma4444/Eagle-Vision-IT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashma4444/Eagle-Vision-IT/issues"
+  },
+  "homepage": "https://github.com/ashma4444/Eagle-Vision-IT#readme",
+  "devDependencies": {
+    "grunt": "^1.5.3",
+    "grunt-contrib-concat": "^2.1.0"
+  }
+}
