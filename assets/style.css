@@ -68,10 +68,10 @@ body .msg i {
   margin-left: 1.5rem;
 }
 body .show {
-  animation: show_slide 2s ease forwards;
+  animation: show_slide 2s ease;
 }
 body .hide {
-  display: none;
+  animation: hide_slide 2s ease;
 }
 @keyframes show_slide {
   0% {
@@ -79,6 +79,14 @@ body .hide {
   }
   100% {
     transform: translateX(0%);
+  }
+}
+@keyframes hide_slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 

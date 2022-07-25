@@ -62,11 +62,11 @@ html{
     }
 
     .show{
-      animation: show_slide 2s ease forwards;
+      animation: show_slide 2s ease ;
     }
 
     .hide{
-      display: none;
+      animation: hide_slide 2s ease;
     }
 
     @keyframes show_slide {
@@ -75,6 +75,15 @@ html{
       }
       100%{
         transform: translateX(0%);
+      }    
+    }
+
+    @keyframes hide_slide {
+      0%{
+        transform: translateX(0%);
+      }
+      100%{
+        transform: translateX(100%);
       }    
     }
   }

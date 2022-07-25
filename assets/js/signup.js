@@ -1,4 +1,6 @@
 $( document ).ready(function() {
+    $('.hide').hide();
+
     $( document ).on( 'submit','.signup', function(){
         var messageWrapper = $("#message");
 
@@ -6,14 +8,18 @@ $( document ).ready(function() {
         function showAnimation(msg){
             messageWrapper.removeClass("hide");
             messageWrapper.addClass("show").text(msg);
+            $('.show').show();
         }
 
         function hideAnimation(){
             if( '' != messageWrapper.text() ){
                 setTimeout( function(){
                     messageWrapper.removeClass("show");
-                    messageWrapper.addClass("hide");
-                }, 6000 );
+                    messageWrapper.addClass("hide");                      
+                }, 5000 );
+                setTimeout( function(){     
+                    $('.hide').hide();    
+                }, 7000 );
             }
         }
 
