@@ -36,20 +36,46 @@ html{
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
 
-    #message{
+    .msg{
       background-color: #ffff;
       color: #cc0000;
       font-weight: 600;
-      padding: .6rem 1rem;
-      font-size: 1.2rem;
+      padding: 1rem;
+      font-size: 1.3rem;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      border-top-left-radius: 1.5rem;
-      border-bottom-left-radius: 1.5rem;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
       position: absolute;
       z-index: 11;
-      top: 15%;
+      top: 0;
       right: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i{
+        font-size: 3rem;
+        margin-left: 1.5rem;
+      }
+    }
+
+    .show{
+      animation: show_slide 2s ease forwards;
+    }
+
+    .hide{
+      display: none;
+    }
+
+    @keyframes show_slide {
+      0%{
+        transform: translateX(100%);
+      }
+      100%{
+        transform: translateX(0%);
+      }    
     }
   }
 

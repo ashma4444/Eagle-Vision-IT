@@ -1,54 +1,51 @@
 $( document ).ready(function() {
-    $("#message").hide();
-
     $( document ).on( 'submit','.signup', function(){
-        var name = jQuery("#name").val();
-        var email = jQuery("#email").val();
-        var password = jQuery("#password").val();
-   
-        if(name=="" && email=="" && password ==""){
-            $("#message").slideDown(500);
-            document.getElementById("message").innerHTML = "All fields are empty";
-            return false;
-        }else if(name == "" && email == ""){
-            $("#message").slideDown(500);
-            document.getElementById("message").innerHTML = "Name and email are empty";
-            return false;
-        }else if(name == "" && password == ""){
-            $("#message").slideDown(500);
-            document.getElementById("message").innerHTML = "Name and password are empty";
-            return false;
-        }else if(email == "" && password == ""){
-            $("#message").slideDown(500);
-            document.getElementById("message").innerHTML = "Email and password are empty";
-            return false;
-        }else if(name==""){
-            $("#message").slideDown(500);
-            document.getElementById("message").innerHTML = "Name is empty";
-            return false;
-        }else if(email==""){
-            $("#message").slideDown(500);
-            document.getElementById("message").innerHTML = "Email is empty";
-            return false;
+        var messageWrapper = $("#message");
 
-        }else if(password==""){
-            $("#message").slideDown(500);
-            document.getElementById("message").innerHTML = "Password is empty";
+        
+        function showAnimation(msg){
+            messageWrapper.removeClass("hide");
+            messageWrapper.addClass("show").text(msg);
+        }
+
+        function hideAnimation(){
+            if( '' != messageWrapper.text() ){
+                setTimeout( function(){
+                    messageWrapper.removeClass("show");
+                    messageWrapper.addClass("hide");
+                }, 6000 );
+            }
+        }
+
+        var formInput = $( 'form.signup input' );
+        var emptyFields = [];
+        var msg = "";
+
+        formInput.each( function( k, v ){
+            var val = $( v ).val();
+            if( '' == val ){
+                emptyFields.push($( v ).attr( 'class' ) );
+            }
+        });
+
+        if(emptyFields.length>0){
+            emptyFields.forEach( function( v ){
+                msg += v +", ";
+            });
+
+            msg = msg.slice(0, -2);
+            msg += " is empty";
+            showAnimation(msg);
+            hideAnimation();
             return false;
         }else{
+            var password = $("#password").val();
             if(password.length < 6){
-                $("#message").slideDown(500);
-                document.getElementById("message").innerHTML = "Password must contain atleast 6 characters";
+                console.log(password);
+                showAnimation("Password must contain atleast 6 characters");
+                hideAnimation();
                 return false;
-           }
+            }
         }
     });
 });
- 
- 
-
-
-
-
-
-

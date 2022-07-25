@@ -23,14 +23,14 @@
     }
   
      @include for-tablet-portrait-up{
-        padding: 1rem;
+        padding: .5rem;
      }
     @include for-tablet-landscape-up{
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     @include for-desktop-up{
-        padding: 2rem;
+        padding: 1.5rem;
     }
 }
 
@@ -38,7 +38,7 @@
     position: relative;
     background-image: url(./images/IMG_-1.png);
     height: 95vh;
-    max-width: 80vw;
+    max-width: 72vw;
     margin: 0 auto;
     background-size: cover;
     background-position: center;

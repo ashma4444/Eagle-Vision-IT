@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div id="message"></div>
+    <div id="message" class="msg hide"></div>
 
     <div class="main-container">
         <div class="banner-container">
@@ -37,18 +37,18 @@
 
                 <div class="input-container">
                     <label for="name">Full Name</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" class="name">
                 </div>
 
 
                 <div class="input-container">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email">
+                    <input type="text" name="email" id="email" class="email">
                 </div>
 
                 <div class="input-container">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Must be at least 6 characters">
+                    <input type="password" name="password" id="password" class="password" placeholder="Must be at least 6 characters">
                     
                     <span class="eye-container" id="eye-click"> 
                         <i class="fa-solid fa-eye-slash" id="eye"></i> 

@@ -16,7 +16,13 @@
     <style>
         body{
             background-image:linear-gradient(250deg, rgba(239,41,94,1) 38%, rgba(239,132,41,1) 100%);
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Montserrat', sans-serif;
+            background-repeat: no-repeat;
+            height: 97vh; 
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
         }
 
         .welcome-heading{
