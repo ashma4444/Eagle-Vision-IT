@@ -17,17 +17,9 @@ class Login extends DatabaseConnection{
             );
 
             $count = $this-> select_query( array('*'), 'user', $fields, 'and');
-
-            $sql= "select * from user where email = '$email' and password = '$dec_pass'";
-            $result = mysqli_query($this -> connection, $sql);
-            while ($row1 = mysqli_fetch_array($result)) {
-                $name = $row1['name'];
-            }
                 
             if($count == 1){  
-                $_SESSION['name'] = $name; 
-                $_SESSION['email'] = $email; 
-                header("location: ../welcome.php");
+                header("location: ../dashboard.php");
             }else{  
                 echo("LOGIN FAILED! Invalid username or password.");
             }  
