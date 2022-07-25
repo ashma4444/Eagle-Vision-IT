@@ -11,17 +11,14 @@
 
 html{
   font-size: 62.5%;
-  @include for-phone-small {    
-    font-size: 38%;
-  }
   @include for-phone-only {    
-      font-size: 40%;
+      font-size: 42%;
   }
   @include for-tablet-portrait-up{
-      font-size: 48%;
+      font-size: 54%;
   }
   @include for-tablet-landscape-up{
-    font-size: 56%;
+    font-size: 58%;
   }
   @include for-desktop-up{
     font-size: 62.5%;
@@ -37,6 +34,7 @@ html{
     display: flex;
     align-items: center;
     overflow: hidden;
+    padding: 0 6rem;
 
     .msg{
       background-color: #ffff;
