@@ -54,5 +54,7 @@
             </div>
         </div>
     </div>
+
+    <img src="assets/images/arrow.png" alt="" class="arrow-img-login arrow-img">
 </body>
 </html>

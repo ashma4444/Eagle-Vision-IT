@@ -64,10 +64,10 @@ body .msg i {
   margin-left: 1.5rem;
 }
 body .show {
-  animation: show_slide 2s ease;
+  animation: show_slide 1s ease;
 }
 body .hide {
-  animation: hide_slide 2s ease;
+  animation: hide_slide 1s ease;
 }
 @keyframes show_slide {
   0% {
@@ -195,6 +195,21 @@ body .hide {
 
 .eye-container:hover {
   cursor: pointer;
+}
+
+.arrow-img {
+  position: absolute;
+  bottom: 5rem;
+  width: 7rem;
+}
+
+.arrow-img-signup {
+  left: 3.8rem;
+}
+
+.arrow-img-login {
+  right: 3.8rem;
+  transform: rotate(180deg);
 }
 
 .text {
@@ -395,7 +410,6 @@ input {
 
 .checkbox-container {
   display: flex;
-  align-items: center;
   margin-bottom: 0.8rem;
 }
 

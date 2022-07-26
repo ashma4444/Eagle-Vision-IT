@@ -13,10 +13,10 @@ $( document ).ready(function() {
                 setTimeout( function(){
                     messageWrapper.removeClass("show");
                     messageWrapper.addClass("hide");
+                    setTimeout(function(){
+                        $('.hide').hide();   
+                    }, 1000);
                 }, 5000 );
-                setTimeout( function(){     
-                    $('.hide').hide();    
-                }, 7000 );
             }
         }
         var messageWrapper = $("#message");

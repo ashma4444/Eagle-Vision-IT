@@ -60,11 +60,11 @@ html{
     }
 
     .show{
-      animation: show_slide 2s ease ;
+      animation: show_slide 1s ease ;
     }
 
     .hide{
-      animation: hide_slide 2s ease;
+      animation: hide_slide 1s ease;
     }
 
     @keyframes show_slide {

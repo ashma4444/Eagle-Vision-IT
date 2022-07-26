@@ -15,11 +15,11 @@ $( document ).ready(function() {
             if( '' != messageWrapper.text() ){
                 setTimeout( function(){
                     messageWrapper.removeClass("show");
-                    messageWrapper.addClass("hide");                      
+                    messageWrapper.addClass("hide");  
+                    setTimeout(function(){
+                        $('.hide').hide();   
+                    }, 1000);         
                 }, 5000 );
-                setTimeout( function(){     
-                    $('.hide').hide();    
-                }, 7000 );
             }
         }
 

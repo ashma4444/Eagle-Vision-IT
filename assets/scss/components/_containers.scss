@@ -80,4 +80,19 @@
     cursor: pointer;
 }
 
+.arrow-img{
+    position: absolute;
+    bottom: 5rem;
+    width: 7rem;
+}
+
+.arrow-img-signup{
+    left: 3.8rem;
+}
+
+.arrow-img-login{
+    right: 3.8rem;
+    transform: rotate(180deg);
+}
+
 
