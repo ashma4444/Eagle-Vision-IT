@@ -225,6 +225,21 @@ body .hide {
   bottom: 5rem;
   width: 7rem;
 }
+@media (max-width: 599px) {
+  .arrow-img {
+    bottom: 2rem;
+  }
+}
+@media (min-width: 600px) {
+  .arrow-img {
+    bottom: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .arrow-img {
+    bottom: 5rem;
+  }
+}
 
 .arrow-img:hover {
   cursor: pointer;

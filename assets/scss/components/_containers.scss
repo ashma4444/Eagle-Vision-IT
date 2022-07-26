@@ -94,6 +94,15 @@
     position: absolute;
     bottom: 5rem;
     width: 7rem;
+    @include for-phone-only {    
+        bottom: 2rem;
+    }
+    @include for-tablet-portrait-up{
+        bottom: 3rem;
+    }
+    @include for-desktop-up{
+        bottom: 5rem;
+    }
 }
 
 .arrow-img:hover{
