@@ -190,7 +190,26 @@ body .hide {
 .eye-container {
   position: absolute;
   right: 1rem;
-  top: 2.6rem;
+}
+@media (max-width: 599px) {
+  .eye-container {
+    top: 3rem;
+  }
+}
+@media (min-width: 600px) {
+  .eye-container {
+    top: 2.8rem;
+  }
+}
+@media (min-width: 900px) {
+  .eye-container {
+    top: 2.8rem;
+  }
+}
+@media (min-width: 1200px) {
+  .eye-container {
+    top: 2.4rem;
+  }
 }
 
 .eye-container:hover {
