@@ -22,6 +22,7 @@
                 <th>Id</th>   
                 <th>Name</th>
                 <th>Email</th>
+                <th>Delete</th>
             </tr>
 
             <?php
@@ -45,6 +46,10 @@
                 <td> <?php echo $res['id']; ?> </td>
                 <td> <?php echo $res['name']; ?> </td>
                 <td><?php echo $res['email']; ?></td>
+                <td>
+                    <button><a href="delete.php"></a></button>
+                    <?php echo $res['email']; ?>
+                </td>
             </tr>
             <?php
                 }
