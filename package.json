@@ -19,6 +19,8 @@
   "homepage": "https://github.com/ashma4444/Eagle-Vision-IT#readme",
   "devDependencies": {
     "grunt": "^1.5.3",
-    "grunt-contrib-concat": "^2.1.0"
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-sass": "^3.1.0",
+    "node-sass": "^7.0.1"
   }
 }

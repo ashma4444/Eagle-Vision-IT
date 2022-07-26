@@ -74,7 +74,7 @@ input{
     border-radius: .5rem;
     outline: 0;
     font-size: 1.4rem;
-    padding: .5rem 1rem;
+    padding: .6rem 1rem;
     @include for-phone-only {    
         margin-bottom: 1.5rem; 
     }
@@ -84,7 +84,6 @@ input{
     @include for-tablet-landscape-up{
         margin-bottom: 1.5rem; 
     }
-
     @include for-desktop-up{
         margin-bottom: 1rem;
     }

@@ -1,0 +1,16 @@
+.dashboard-container{
+    font-size: 1.5rem;
+    margin: 0 auto;
+    table{
+        background-color: whitesmoke;
+    }
+    table, th, td{
+        border: 1.5px solid;
+        border-collapse: collapse;
+        padding: 1rem 2rem;
+    }
+
+    table th{
+        font-weight: 700;
+    }
+}

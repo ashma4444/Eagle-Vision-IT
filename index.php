@@ -55,6 +55,8 @@
         </div>
     </div>
 
-    <img src="assets/images/arrow.png" alt="" class="arrow-img-login arrow-img">
+    <a href="signup.php">
+        <img src="assets/images/arrow.png" alt="" class="arrow-img-login arrow-img">
+    </a>
 </body>
 </html>

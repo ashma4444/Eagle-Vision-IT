@@ -70,7 +70,9 @@
         </div>
     </div>
 
-    <img src="assets/images/arrow.png" alt="" class="arrow-img-signup arrow-img">
+    <a href="index.php">
+        <img src="assets/images/arrow.png" alt="" class="arrow-img-signup arrow-img">
+    </a>
 </body>
 </html>
 

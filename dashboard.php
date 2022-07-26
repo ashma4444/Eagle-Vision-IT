@@ -11,40 +11,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Document</title>
-    <style>
-        body{
-            background-image:linear-gradient(250deg, rgba(239,41,94,1) 38%, rgba(239,132,41,1) 100%);
-            font-family: 'Montserrat', sans-serif;
-            background-repeat: no-repeat;
-            height: 97vh; 
-            display: flex;
-            flex-direction:column;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .welcome-heading{
-            text-align: center;
-            display: block;
-        }
-
-        .dashboard-container{
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <h1 class="welcome-heading">Dashboard</h1>
     <div class="dashboard-container">
         <table>
             <tr>
                 <th>Id</th>   
                 <th>Name</th>
                 <th>Email</th>
-                <th>Delete</th>
-                <th>Update</th>
             </tr>
 
             <?php
