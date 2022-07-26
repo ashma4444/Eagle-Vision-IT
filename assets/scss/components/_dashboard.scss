@@ -7,10 +7,15 @@
     table, th, td{
         border: 1.5px solid;
         border-collapse: collapse;
-        padding: 1rem 2rem;
+        padding: 1rem 3rem;
     }
 
     table th{
         font-weight: 700;
     }
+}
+
+.button a{
+    text-decoration: none;
+    color: $font_color;
 }

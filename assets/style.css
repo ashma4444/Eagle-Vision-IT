@@ -490,10 +490,15 @@ input {
 .dashboard-container table, .dashboard-container th, .dashboard-container td {
   border: 1.5px solid;
   border-collapse: collapse;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
 }
 .dashboard-container table th {
   font-weight: 700;
+}
+
+.button a {
+  text-decoration: none;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    require_once 'model/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,33 +26,24 @@
             </tr>
 
             <?php
-                $servername = "localhost";
-                $username = "root";      
-                $password = "";            
-                $dbname = "evit"; 
-                
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
+                $db = new DatabaseConnection();
 
                 $sql = "select * from user";
-                $query = mysqli_query($conn, $sql);
+                $query = mysqli_query($db -> connection, $sql);
 
                 while($res = mysqli_fetch_array($query)){
             ?>
+
             <tr>
                 <td> <?php echo $res['id']; ?> </td>
                 <td> <?php echo $res['name']; ?> </td>
                 <td><?php echo $res['email']; ?></td>
                 <td>
-                    <button><a href="delete.php"></a></button>
-                    <?php echo $res['email']; ?>
+                    <button class="button"><a href="controller/form-action.php?deleteid=<?php echo $res['id']; ?>"> Delete</a></button>
                 </td>
             </tr>
             <?php
-                }
+            }
             ?>
         </table>
 
