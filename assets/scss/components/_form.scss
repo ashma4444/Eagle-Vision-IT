@@ -106,11 +106,6 @@ input{
     font-weight: 600;
 }
 
-::placeholder{
-    color: $placeholder_color;
-    font-size: 1.2rem;
-}
-
 .checkbox-container{
     display: flex;
     margin-bottom: .8rem;

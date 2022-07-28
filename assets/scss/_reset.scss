@@ -7,12 +7,14 @@
     font-family: $primary_font;
     text-decoration: none;
     font-weight: 500;
-  }
+    box-sizing: border-box;
+}
 
 html{
   font-size: 62.5%;
   @include for-phone-only {    
-      font-size: 42%;
+      // font-size: 42%;
+      font-size: 52%;
   }
   @include for-tablet-portrait-up{
       font-size: 54%;
@@ -25,7 +27,7 @@ html{
   }
 }
   
-  body{
+.form-body{
     background-image:url(../assets/images/logo-shape.png), linear-gradient(250deg, rgba(239,41,94,1) 38%, rgba(239,132,41,1) 100%); 
     background-size: cover;
     background-position: right;
@@ -85,6 +87,15 @@ html{
       }    
     }
   }
+
+.dashboard-body{
+    background-color: #f5f7f9;
+    background-image: none;
+    height: 100vh;
+    ul li{
+        list-style: none;
+    }
+}
 
 
 

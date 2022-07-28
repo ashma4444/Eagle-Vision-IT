@@ -21,7 +21,8 @@ class Signup extends DatabaseConnection{
                 $fields = array(
                     'name' => $name,
                     'email' => $email,
-                    'password' => $enc_pass
+                    'password' => $enc_pass,
+                    'role' => "Admin"
                 );
                 $this->insert_data( 'user', $fields );
                 header("location: ../index.php");

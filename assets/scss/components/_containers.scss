@@ -63,6 +63,10 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    ::placeholder{
+        color: $placeholder_color;
+        font-size: 1.2rem;
+    }
     i{
         font-size: 1.2rem;
         color: $form-text;
