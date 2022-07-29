@@ -23,10 +23,10 @@
         <a class="ham-span">
             <i class="fa-solid fa-bars"></i>
         </a>
-        <div class="side-heading side-heading-up">
+        <!-- <div class="side-heading side-heading-up">
             <i class="fa-regular fa-circle-plus"></i>
             <h2>EVIT Dashboard</h2>
-        </div>
+        </div> -->
 
         <div class="searchbox">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -41,6 +41,13 @@
 
     <div class="dashboard-container">
         <div class="side-bar">
+            <a class="ham-span">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+            <div class="side-heading side-heading-up common-db-container">
+                <i class="fa-regular fa-circle-plus"></i>
+                <h2>EVIT Dashboard</h2>
+            </div>
             <div class="side-list">
                 <ul>
                     <li>
@@ -95,29 +102,32 @@
 
                 <?php
                     $db = new DatabaseConnection();
-
-                    $sql = "select * from user";
-                    $query = mysqli_query($db -> connection, $sql);
-
-                    while($res = mysqli_fetch_array($query)){
-                 ?>
-
-            <tr>
-                <td> <?php echo $res['id']; ?> </td>
-                <td> <?php echo $res['name']; ?> </td>
-                <td> <?php echo $res['created_date']; ?> </td>
-                <td><?php echo $res['role']; ?></td>
-                <!-- <td>
-                    <button class="button"><a href="controller/form-action.php?deleteid=<?php echo $res['id']; ?>"> Delete</a></button>
-                </td> -->
-                <td class="action-container">
-                        <a href=""><i class="fa-regular fa-gear"></i></a> 
-                        <a href="controller/form-action.php?deleteid=<?php echo $res['id']; ?>"><i class="fa-solid fa-circle-xmark"></i></a>
-                </td>
-            </tr>
-            <?php
-            }
-            ?>
+                    $data = $db -> select_query(array("*"), "user" );
+                    if( !empty( $data ) ):
+                        foreach( $data as $key => $d ): ?>
+                            <tr>
+                                <td> <?php echo $key+1 ?> </td>
+                                <td> 
+                                    <div class="td-img-container">
+                                        <img src="assets/images/IMG_-1.png" alt="">
+                                        <?php echo $d[ 'name' ]; ?> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <?php 
+                                        $date = strtotime( $d['created_date'] );
+                                        echo date( 'd/m/Y', $date );
+                                    ?>
+                                </td>
+                                <td><?php echo $d['role']; ?></td>
+                                <td class="action-container">
+                                        <a href=""><i class="fa-regular fa-gear"></i></a> 
+                                        <a href="controller/form-action.php?id=<?php echo $d['id']; ?>"><i class="fa-solid fa-circle-xmark"></i></a>
+                                </td>
+                            </tr>
+                        <?php endforeach;
+                    endif;           
+                ?>
             </table>
         </div>
     </div>

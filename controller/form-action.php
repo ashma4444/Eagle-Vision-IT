@@ -20,8 +20,8 @@ if (isset($_POST['signup_form'])){
     $signup->signup_check( $name, $email, $password );
 }
 
-if(isset($_GET['deleteid'])){
-    $id=$_GET['deleteid'];
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
 
     $del = new Delete();
     $del -> delete_user($id);

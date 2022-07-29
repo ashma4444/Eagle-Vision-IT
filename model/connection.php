@@ -31,8 +31,10 @@
         }
 
 
-        public function select_query($field_arr, $tablename, $fields, $opr){
+        public function select_query($field_arr, $tablename, $fields=false, $opr=false){
             // $sql = "select * from user where email = '$email' and password = '$dec_pass'";  
+            $data = [];
+
             $sql = 'select ';
             if(count($field_arr) > 1){
                 // for($i = 0; $i < count($field_arr); $i++){
@@ -49,20 +51,33 @@
                 $sql .= $field_arr[0];
             }
 
-            $sql .= ' from ' .$tablename. ' where ';
+            $sql .= ' from ' .$tablename;
             
-            foreach( $fields as $key => $value ){
-                $sql .= $key .'="' . $value .'" '.$opr.' ';
-            }  
+            if( $fields ){
+                $sql .= ' where ';
+                foreach( $fields as $key => $value ){
+                    $sql .= $key .'="' . $value .'" '.$opr.' ';
+                }  
+            }
 
             $sql = rtrim( $sql, ' '.$opr );
             // echo $sql; die;
+            
             $result = mysqli_query($this->connection, $sql);   
 
+            if($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $data[] = $row;
+                }
+            }
+            return $data;
+        }
 
-            $count = mysqli_num_rows($result);  
 
-            return $count;
+        public function delete_query( $tablename, $id ){
+            $sql = "delete from $tablename where id=$id";
+            $result =  mysqli_query($this -> connection, $sql);
+            return $result;
         }
     }
 

@@ -16,9 +16,9 @@ class Login extends DatabaseConnection{
                 'password' => $dec_pass
             );
 
-            $count = $this-> select_query( array('*'), 'user', $fields, 'and');
-                
-            if($count == 1){  
+            $data = $this-> select_query( array('*'), 'user', $fields, 'and');
+
+            if(count( $data ) == 1){  
                 header("location: ../dashboard.php");
             }else{  
                 echo("LOGIN FAILED! Invalid username or password.");

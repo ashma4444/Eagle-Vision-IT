@@ -8,41 +8,13 @@ nav{
         margin: 0;
         padding: 1.5rem 5rem;
     }
-
-    .side-heading{
-        display: flex;
-        align-items: center;
-        h2{
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #2b2b2bd4;
-        }
-        @include for-phone-only {    
-            display: none;
-        }
-        @include for-tablet-portrait-up{    
-             width: 30%;
-        }
-        @include for-tablet-landscape-up{    
-            width: 20%;
-        }
-    
-        @include for-desktop-up{    
-            width: 20%;
-        }
-    }
-
-    .side-heading i{
-        font-weight: 600;
-        font-size: 1.8rem;
-        color: #999999;
-        margin-right: .8rem;
-    }
 }
 
 .side-bar{
-    height: 91.5vh;
+    // height: 91.5vh;
+    height: 100vh;
     padding: 1.7rem 3rem;
+    position: absolute;
     top: 0;
     width: 20%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px, rgba(0, 0, 0, 0.1) 0px 6px 6px;
@@ -57,15 +29,32 @@ nav{
         width: 40%;
     }
     @include for-tablet-portrait-up{    
-        width: 26%;
-   }
-   @include for-tablet-landscape-up{    
-        width: 18%;
-   }
+        width: 30%;
+    }
+    @include for-tablet-landscape-up{    
+        width: 22%;
+    }
 
-   @include for-desktop-up{    
-       width: 20%;
-   }
+//    @include for-desktop-up{    
+//        width: 20%;
+//    }
+}
+
+.side-heading{
+    display: flex;
+    align-items: center;
+    h2{
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #2b2b2bd4;
+    }
+}
+
+.side-heading i{
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #999999;
+    margin-right: .8rem;
 }
 
 .show{
@@ -78,6 +67,7 @@ nav{
     width: 50%;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     i{
         font-size: 1.6rem;
         color: #999999;
@@ -85,7 +75,7 @@ nav{
 
     input{
         margin: 0;
-        width: 100%;
+        width: 45%;
         border: none;
         margin-left: 1rem;
     }
@@ -114,7 +104,7 @@ nav{
 }
 
 .nav-info{
-    width: 30%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -125,9 +115,9 @@ nav{
     }
 }
 
-.dashboard-container{
-    display: flex;
-}
+// .dashboard-container{
+//     display: flex;
+// }
 
 .dashboard-p{
     font-size: $p-size;
@@ -152,7 +142,8 @@ nav{
 .table-container{
     font-size: 1.4rem;
     color: #333333;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
     margin-top: 5rem;
 
     @include for-phone-only {    
@@ -161,8 +152,8 @@ nav{
 
     table{
         background-color: #ffff;
+        border-collapse: collapse;
         padding: .8rem 2rem;
-        max-width: 90rem;
         text-align: left;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         
@@ -175,11 +166,30 @@ nav{
             color: #333333;
             border-bottom: .2px solid #99999987;
         }
+
+        @include for-phone-only {    
+        }
+        @include for-tablet-portrait-up{    
+            width: 55%;
+            // display: block;
+            // display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin-left: 26rem;
+        }
+        @include for-tablet-landscape-up{    
+            width: 65%;
+            margin-left: 26rem;
+        }
+    
+       @include for-desktop-up{    
+        width: 66%;
+        margin-left: 28rem;
+       }
     }
 }
 
 .action-container{
-    text-align: center;
     i{
         font-weight: 600;
         font-size: 1.6rem;
@@ -190,5 +200,17 @@ nav{
     }
     i.fa-solid.fa-circle-xmark{
         color: #f43122;
+    }
+}
+
+.td-img-container{
+    display: flex;
+    align-items: center;
+    img{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 1rem;
     }
 }

@@ -23,6 +23,7 @@ class Signup extends DatabaseConnection{
                     'email' => $email,
                     'password' => $enc_pass,
                     'role' => "Admin"
+                    // 'created_date' => CONVERT(VARCHAR(10), getdate(), 111)
                 );
                 $this->insert_data( 'user', $fields );
                 header("location: ../index.php");
