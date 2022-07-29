@@ -121,7 +121,7 @@
                                 </td>
                                 <td><?php echo $d['role']; ?></td>
                                 <td class="action-container">
-                                        <a href="update.php?id=<?php echo $d['id']; ?>" class="update-btn"><i class="fa-regular fa-gear"></i></a> 
+                                        <a href="signup.php?id=<?php echo $d['id']; ?>" class="update-btn"><i class="fa-regular fa-gear"></i></a> 
                                         <a href="controller/form-action.php?id=<?php echo $d['id']; ?>" class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a>
                                         <!-- <a class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a> -->
                                 </td>
