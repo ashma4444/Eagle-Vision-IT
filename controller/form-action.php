@@ -26,3 +26,13 @@ if(isset($_GET['id'])){
     $del = new Delete();
     $del -> delete_user($id);
 }
+
+if (isset($_POST['update_form'])){
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $update = new Signup();
+    $update -> update_user($id, $name, $email, $password);
+}

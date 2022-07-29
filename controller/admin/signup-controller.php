@@ -1,7 +1,7 @@
 <?php
 require_once "../model/connection.php";
 class Signup extends DatabaseConnection{
-    public function signup_check($name =false, $email = false, $password = false){
+    public function signup_check( $name =false, $email = false, $password = false ){
         if ($name && $email && $password ) {
             $validation = true;
             // hashing password
@@ -30,6 +30,24 @@ class Signup extends DatabaseConnection{
             }
 
             $this->connection->close(); 
+        }
+
+
+    }
+
+    public function update_user( $id = false, $name = false, $email = false, $password = false){
+        if( $id ){
+            $dec_pass = md5($password);
+
+            $fields = array(
+                'name' => $name,
+                'email' => $email,
+                'password' => $dec_pass,
+            );
+            $result = $this -> update_query('user', $fields, $id);
+            if($result){
+                header("location: ../dashboard.php");
+            }
         }
     }
 }

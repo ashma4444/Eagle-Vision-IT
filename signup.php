@@ -1,4 +1,6 @@
-<?php require_once "views/header.php"?>
+<?php require_once "views/header.php";
+$is_update = isset( $_GET[ 'id' ] ) && '' != $_GET[ 'id' ] ? true : false;
+?>
 
 <body class="form-body">
     <div id="message" class="msg hide"></div>
@@ -16,7 +18,7 @@
             <h1 class="form-heading">Share your awesomeness</h1>
 
             <form action="controller/form-action.php" method="post" class="signup inner-form">
-                <h2 class="form-heading2">Sign Up</h2>
+                <h2 class="form-heading2"><?php echo $is_update ? 'Update' : 'Signup'; ?></h2>
                 <p class="p-text form-para">Already Have an account?<a href="index.php" class="form-link">Login Now</a></p>
 
                 <div class="input-container">
@@ -44,7 +46,9 @@
                     <p class="p-text">Sign up for email updates.</p>
                 </div>
 
-                <button class="button" type="submit" name="signup_form" value="submit">SIGN UP</button>
+                <button class="button" type="submit" name="<?php echo $is_update ? 'update_form' : 'signup_form' ?>" value="submit">
+                    <?php echo $is_update ? 'UPDATE' : 'SIGN UP'; ?>
+                </button>
 
                 <p class="center-text">By continuing, you agree to accept our Privacy Policy & Terms of Service.</p>
             </form>

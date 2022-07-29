@@ -79,6 +79,20 @@
             $result =  mysqli_query($this -> connection, $sql);
             return $result;
         }
+
+        public function update_query($tablename, $fields, $id){
+            $sql = " update " .$tablename ." set ";
+            // name='$name', email='$email', password='$dec_pass' where id=$id ";
+            foreach( $fields as $key => $value ){
+                $sql .= $key .'="' . $value .'",';
+            }  
+            $sql = rtrim( $sql, ',');
+            $sql .= " where id=".$id;
+            // echo $sql; die;
+            $result =  mysqli_query($this -> connection, $sql);   
+            
+            return $result;
+        }
     }
 
 

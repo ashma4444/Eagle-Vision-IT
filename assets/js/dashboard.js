@@ -12,5 +12,20 @@ $( document ).ready(function() {
             $(".ham-span i").addClass("fa-solid fa-bars");
         }
     });
+
+
+
+
+
+
+    $(".delete-btn").click(function(){
+        var result = confirm("Are you sure want to delete?");
+        return result;
+    });
+
+
+    $(".update-btn").click(function(){
+        
+    });
 });
 
