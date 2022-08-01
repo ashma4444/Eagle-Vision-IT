@@ -12,7 +12,7 @@ html {
 }
 @media (max-width: 599px) {
   html {
-    font-size: 52%;
+    font-size: 42%;
   }
 }
 @media (min-width: 600px) {
@@ -694,6 +694,20 @@ nav {
   border-radius: 50%;
   object-fit: cover;
   margin-right: 1rem;
+}
+
+.pagination-container {
+  position: absolute;
+  bottom: 5rem;
+  right: 5rem;
+}
+.pagination-container .active {
+  background-color: #289ae7;
+  color: #fff;
+}
+
+.pagination-container a {
+  padding: 0.8rem 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

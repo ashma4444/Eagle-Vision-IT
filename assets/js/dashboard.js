@@ -27,5 +27,29 @@ $( document ).ready(function() {
     $(".update-btn").click(function(){
         
     });
+
+    $( document ).on( 'click', '.pagination-container a', function( e ){
+        e.preventDefault();
+
+
+        var page = $( this ).attr( 'id' );
+        
+        $( this).siblings().removeClass('active');
+        $( this ).addClass( 'active' );
+
+        $.ajax({
+            url: "http://localhost/intern-evit/Eagle-Vision-IT/controller/ajax-action.php", 
+            type: "POST",
+            data: {
+                type: 'pagination',
+                page_no : page 
+            },
+            success: function(res){
+                if( res ){
+                    $( '.table-container table tbody' ).replaceWith( res );
+                }
+            }
+        });
+    });
 });
 

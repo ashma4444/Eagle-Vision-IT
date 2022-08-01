@@ -13,8 +13,8 @@
 html{
   font-size: 62.5%;
   @include for-phone-only {    
-      // font-size: 42%;
-      font-size: 52%;
+      font-size: 42%;
+      // font-size: 52%;
   }
   @include for-tablet-portrait-up{
       font-size: 54%;

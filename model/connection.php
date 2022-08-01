@@ -37,10 +37,6 @@
 
             $sql = 'select ';
             if(count($field_arr) > 1){
-                // for($i = 0; $i < count($field_arr); $i++){
-                //     $sql .= $field_arr[$i]. ',';
-                // }
-
                 foreach($field_arr as $value){
                     $sql .= $value. ',';
                 }
@@ -93,7 +89,12 @@
             
             return $result;
         }
+
+        public function limit_query($tablename, $offset, $limit){
+            // $sql = "select * from student limit {$offset}, {$limit}";
+            $sql = "select * from " .$tablename ." limit " .$offset .", " .$limit;
+            $result = mysqli_query($this -> connection, $sql);  
+            return $result;
+        }
     }
-
-
 ?>

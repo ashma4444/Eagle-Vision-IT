@@ -210,3 +210,23 @@ nav{
         margin-right: 1rem;
     }
 }
+
+
+
+.pagination-container{
+    position: absolute;
+    bottom: 5rem;
+    right: 5rem;
+    
+    .active{
+        background-color: #289ae7;
+        color: #fff;
+    }
+}
+
+.pagination-container a{
+    padding: .8rem 1.5rem;
+}
+
+
+

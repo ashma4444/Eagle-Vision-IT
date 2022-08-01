@@ -50,4 +50,41 @@ class Signup extends DatabaseConnection{
             }
         }
     }
+
+    public function get_user_by_ajax( $page_num = false ){
+        
+        if( $page_num ){
+            $formula = ( $page_num - 1) * 3;
+            $data = $this -> limit_query( "user", $formula, 3 );
+            if( !empty( $data ) ):
+                echo '<tbody>';
+                foreach( $data as $key => $d ): ?>
+                    <tr>
+                        <td> <?php echo $key+1 ?> </td>
+                        <td> 
+                            <div class="td-img-container">
+                                <img src="assets/images/IMG_-1.png" alt="">
+                                <?php echo $d[ 'name' ]; ?> 
+                            </div>
+                        </td>
+
+                        <td><?php echo $d['email']; ?></td>
+                        <td>
+                            <?php 
+                                $date = strtotime( $d['created_date'] );
+                                echo date( 'd/m/Y', $date );
+                            ?>
+                        </td>
+                        <td><?php echo $d['role']; ?></td>
+                        <td class="action-container">
+                                <a href="signup.php?id=<?php echo $d['id']; ?>" class="update-btn"><i class="fa-regular fa-gear"></i></a> 
+                                <a href="controller/form-action.php?id=<?php echo $d['id']; ?>" class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a>
+                                <!-- <a class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a> -->
+                        </td>
+                    </tr>
+                <?php endforeach;
+                echo '</tbody>';
+            endif;           
+        }
+    }
 }

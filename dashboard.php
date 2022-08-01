@@ -92,45 +92,64 @@
 
         <div class="table-container">
             <table>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Date Created</th>
-                    <th>Role</th>
-                    <th>Action</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Date Created</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $db = new DatabaseConnection();
+                        $data = $db -> limit_query("user", 0, 3);
+                        if( !empty( $data ) ):
+                            foreach( $data as $key => $d ): ?>
+                                <tr>
+                                    <td> <?php echo $key+1 ?> </td>
+                                    <td> 
+                                        <div class="td-img-container">
+                                            <img src="assets/images/IMG_-1.png" alt="">
+                                            <?php echo $d[ 'name' ]; ?> 
+                                        </div>
+                                    </td>
 
-                <?php
-                    $db = new DatabaseConnection();
-                    $data = $db -> select_query(array("*"), "user" );
-                    if( !empty( $data ) ):
-                        foreach( $data as $key => $d ): ?>
-                            <tr>
-                                <td> <?php echo $key+1 ?> </td>
-                                <td> 
-                                    <div class="td-img-container">
-                                        <img src="assets/images/IMG_-1.png" alt="">
-                                        <?php echo $d[ 'name' ]; ?> 
-                                    </div>
-                                </td>
-                                <td>
-                                    <?php 
-                                        $date = strtotime( $d['created_date'] );
-                                        echo date( 'd/m/Y', $date );
-                                    ?>
-                                </td>
-                                <td><?php echo $d['role']; ?></td>
-                                <td class="action-container">
-                                        <a href="signup.php?id=<?php echo $d['id']; ?>" class="update-btn"><i class="fa-regular fa-gear"></i></a> 
-                                        <a href="controller/form-action.php?id=<?php echo $d['id']; ?>" class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a>
-                                        <!-- <a class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a> -->
-                                </td>
-                            </tr>
-                        <?php endforeach;
-                    endif;           
-                ?>
+                                    <td><?php echo $d['email']; ?></td>
+                                    <td>
+                                        <?php 
+                                            $date = strtotime( $d['created_date'] );
+                                            echo date( 'd/m/Y', $date );
+                                        ?>
+                                    </td>
+                                    <td><?php echo $d['role']; ?></td>
+                                    <td class="action-container">
+                                            <a href="signup.php?id=<?php echo $d['id']; ?>" class="update-btn"><i class="fa-regular fa-gear"></i></a> 
+                                            <a href="controller/form-action.php?id=<?php echo $d['id']; ?>" class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a>
+                                            <!-- <a class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a> -->
+                                    </td>
+                                </tr>
+                            <?php endforeach;
+                        endif;           
+                    ?>
+                </tbody>
             </table>
+
+
+            <div class="pagination-container">
+            <?php 
+                $pagination_data = $db -> select_query(array("*"), "user" );
+                for($i = 1; $i <= ceil( count( $pagination_data )/3 ); $i++ ){
+                    $active = $i== 1 ? 'active': ''; ?>
+                    <a href="" class="<?php echo $active; ?>" id="<?php echo $i ?>"> <?php echo $i ?> </a>  
+                <?php } 
+            ?>
         </div>
+        </div>
+
+
     </div>
 </body>
 </html>
