@@ -48,7 +48,7 @@ $( document ).ready(function() {
         }else{
             $(".next").attr("id", nextid);
         }
-        
+
         $.ajax({
             url: "http://localhost/intern-evit/Eagle-Vision-IT/controller/ajax-action.php", 
             type: "POST",
@@ -56,6 +56,14 @@ $( document ).ready(function() {
                 type: 'pagination',
                 page_no : page 
             },// before send -> loading class halne
+            beforeSend: function(){
+                $(".table-container table").addClass("loading");
+                $(".circle").show();
+            },
+            complete: function(){
+                $(".table-container table").removeClass("loading");
+                $(".circle").hide();
+            },
             success: function(res){
                 if( res ){
                     $( '.table-container table tbody' ).replaceWith( res );

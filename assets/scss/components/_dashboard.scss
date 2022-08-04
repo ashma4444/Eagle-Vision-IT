@@ -253,3 +253,27 @@ nav{
   }
 
 
+
+table.loading{
+    background-color: #00000038;
+} 
+
+.circle{
+    display: none;
+    height: 50px;
+    width: 50px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 32%;
+    left: 58%;
+    border-top: 5px solid;
+    animation:  spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
