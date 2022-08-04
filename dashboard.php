@@ -1,4 +1,5 @@
 <?php 
+// session_start();
     require_once 'model/connection.php';
 ?>
 
@@ -17,7 +18,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/js/dashboard.js"></script>
 </head>
-
+<?php 
+    if( !isset( $_COOKIE[ 'evit_data' ] ) ){
+        header('location: index.php' );
+    }
+    if( isset( $_GET[ 'page' ] ) ){
+        $page = $_GET[ 'page' ];
+    }else{
+        $page = 'index';
+    }
+?>
 <body class="dashboard-body">
     <nav>
         <a class="ham-span">
@@ -34,9 +44,25 @@
         </div>
 
         <div class="nav-info">
-            <p class="dashboard-p">User_name</p>
-            <i class="fa-solid fa-angle-down"></i>
-        </div-nav-info>
+            
+            <div class="dropdown">
+                <div class="nav-info-container">
+                    <p class="dashboard-p">
+                        <?php 
+                            $user_loggedin = $_COOKIE["evit_data"];
+                            $user_loggedin = json_decode($user_loggedin, true);
+                            echo $user_loggedin[ 'name' ];
+                            // echo $decoded_json[0];
+                        ?>
+                    </p> 
+
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="controller/admin/logout-controller.php">Logout</a>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <div class="dashboard-container">
@@ -90,66 +116,13 @@
 
         </div>
 
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Date Created</th>
-                        <th>Role</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $db = new DatabaseConnection();
-                        $data = $db -> limit_query("user", 0, 3);
-                        if( !empty( $data ) ):
-                            foreach( $data as $key => $d ): ?>
-                                <tr>
-                                    <td> <?php echo $key+1 ?> </td>
-                                    <td> 
-                                        <div class="td-img-container">
-                                            <img src="assets/images/IMG_-1.png" alt="">
-                                            <?php echo $d[ 'name' ]; ?> 
-                                        </div>
-                                    </td>
-
-                                    <td><?php echo $d['email']; ?></td>
-                                    <td>
-                                        <?php 
-                                            $date = strtotime( $d['created_date'] );
-                                            echo date( 'd/m/Y', $date );
-                                        ?>
-                                    </td>
-                                    <td><?php echo $d['role']; ?></td>
-                                    <td class="action-container">
-                                            <a href="signup.php?id=<?php echo $d['id']; ?>" class="update-btn"><i class="fa-regular fa-gear"></i></a> 
-                                            <a href="controller/form-action.php?id=<?php echo $d['id']; ?>" class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a>
-                                            <!-- <a class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a> -->
-                                    </td>
-                                </tr>
-                            <?php endforeach;
-                        endif;           
-                    ?>
-                </tbody>
-            </table>
-
-
-            <div class="pagination-container">
             <?php 
-                $pagination_data = $db -> select_query(array("*"), "user" );
-                for($i = 1; $i <= ceil( count( $pagination_data )/3 ); $i++ ){
-                    $active = $i== 1 ? 'active': ''; ?>
-                    <a href="" class="<?php echo $active; ?>" id="<?php echo $i ?>"> <?php echo $i ?> </a>  
-                <?php } 
+                $path = __DIR__ . '/views/dashboard/' . $page . '.php';
+                if( file_exists( $path ) ){
+                    include( $path ); 
+                }
             ?>
         </div>
-        </div>
-
-
     </div>
 </body>
 </html>

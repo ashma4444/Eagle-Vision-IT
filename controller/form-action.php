@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'admin/login-controller.php';
 include 'admin/signup-controller.php';
 include 'admin/delete-controller.php';

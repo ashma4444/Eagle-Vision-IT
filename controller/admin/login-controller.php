@@ -2,9 +2,8 @@
 require_once '../model/connection.php';
 class Login extends DatabaseConnection{
     public function user_check( $email = false, $password = false ){
-        session_start();
         if ( $email && $password ) {
-            $name;
+            $json_arr = [];
              
             $dec_pass = md5($password);
               
@@ -17,11 +16,22 @@ class Login extends DatabaseConnection{
             );
 
             $data = $this-> select_query( array('*'), 'user', $fields, 'and');
+            if(count( $data ) == 1){
+                $get_data = $data[0];
+                $json_arr = array(
+                    'id' => $get_data[ 'id' ],
+                    'name' => $get_data['name'],
+                    'email' => $get_data['email']
+                ); 
 
-            if(count( $data ) == 1){  
+                // array ma cookie set
+                // convert -> json
+                $json_data = json_encode($json_arr);
+                setcookie("evit_data",$json_data , time()+60*60*24*365, "/");
                 header("location: ../dashboard.php");
             }else{  
                 echo("LOGIN FAILED! Invalid username or password.");
+                header("Refresh: 5; url= ../index.php");
             }  
         } 
     }
