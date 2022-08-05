@@ -154,7 +154,8 @@ nav{
         text-align: left;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         // overflow:auto;
-        overflow-x:auto
+        overflow-x:scroll;
+        display: block;
         
         th{
             font-weight: 700;

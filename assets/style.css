@@ -650,8 +650,10 @@ nav {
   padding: 0.8rem 2rem;
   text-align: left;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  overflow-x: scroll;
+  display: block;
 }
-.table-container table overflow-x:auto th {
+.table-container table th {
   font-weight: 700;
 }
 .table-container table th, .table-container table td {
