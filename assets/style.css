@@ -330,6 +330,13 @@ html {
   font-size: 1.1rem;
 }
 
+.emsg {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  font-weight: 800;
+}
+
 .form-heading {
   color: #2B2B2B;
   font-size: 2rem;
@@ -644,7 +651,7 @@ nav {
   text-align: left;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.table-container table th {
+.table-container table overflow-x:auto th {
   font-weight: 700;
 }
 .table-container table th, .table-container table td {

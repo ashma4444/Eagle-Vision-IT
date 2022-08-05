@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../model/connection.php';
 class Login extends DatabaseConnection{
     public function user_check( $email = false, $password = false ){
@@ -30,8 +31,10 @@ class Login extends DatabaseConnection{
                 setcookie("evit_data",$json_data , time()+60*60*24*365, "/");
                 header("location: ../dashboard.php");
             }else{  
-                echo("LOGIN FAILED! Invalid username or password.");
-                header("Refresh: 5; url= ../index.php");
+                // echo("LOGIN FAILED! Invalid username or password.");
+                // header("Refresh: 5; url= ../index.php");
+                $_SESSION["errormsg"]='Invalid username or password.';
+                header("location: ../index.php");
             }  
         } 
     }

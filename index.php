@@ -1,6 +1,11 @@
-<?php require_once "views/header.php"?>
+<?php
+    session_start();
+    require_once "views/header.php"
+?>
 <body class="form-body">
-    <div id="message" class="msg hide"></div>
+    <div id="message" class="msg hide">
+        
+    </div>
 
     <div class="main-container">
         <div class="banner-container">
@@ -44,5 +49,14 @@
     <a href="signup.php">
         <img src="assets/images/arrow.png" alt="" class="arrow-img-login arrow-img">
     </a>
+
+    <h2 class="emsg">
+        <?php
+            if(isset($_SESSION["errormsg"])){
+                echo $_SESSION["errormsg"];
+                unset($_SESSION["errormsg"]);
+            }
+        ?>
+    </h2>
 </body>
 <?php require_once "views/footer.php"?>
