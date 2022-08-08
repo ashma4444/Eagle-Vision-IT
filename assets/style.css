@@ -683,6 +683,12 @@ nav {
     width: 100%;
   }
 }
+@media (min-width: 1200px) {
+  .table-container {
+    width: 80%;
+    float: right;
+  }
+}
 .table-container table {
   background-color: white;
   border-collapse: collapse;
