@@ -151,6 +151,7 @@ nav{
         background-color: #ffff;
         border-collapse: collapse;
         padding: .8rem 2rem;
+        width: fit-content;
         text-align: left;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         // overflow:auto;
@@ -167,10 +168,8 @@ nav{
             border-bottom: .2px solid #99999987;
         }
 
-        @include for-phone-only {    
-        }
         @include for-tablet-portrait-up{    
-            width: 55%;
+            // width: 55%;
             // display: block;
             // display: flex;
             overflow-x: auto;
@@ -178,12 +177,12 @@ nav{
             margin-left: 26rem;
         }
         @include for-tablet-landscape-up{    
-            width: 65%;
+            // width: 65%;
             margin-left: 26rem;
         }
     
        @include for-desktop-up{    
-        width: 66%;
+        // width: 66%;
         margin-left: 28rem;
        }
     }
@@ -278,5 +277,15 @@ table.loading{
     100%{
         transform: rotate(360deg);
     }
+}
+
+.export-btn{
+    position: absolute;
+    bottom: 12rem;
+    padding: 1rem 3rem;
+    border: none;
+    outline: none;
+    background-color: #289ae7;
+    color: #ffff;
 }
 

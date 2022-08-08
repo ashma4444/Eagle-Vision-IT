@@ -648,6 +648,7 @@ nav {
   background-color: white;
   border-collapse: collapse;
   padding: 0.8rem 2rem;
+  width: fit-content;
   text-align: left;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   overflow-x: scroll;
@@ -663,7 +664,6 @@ nav {
 }
 @media (min-width: 600px) {
   .table-container table {
-    width: 55%;
     overflow-x: auto;
     white-space: nowrap;
     margin-left: 26rem;
@@ -671,13 +671,11 @@ nav {
 }
 @media (min-width: 900px) {
   .table-container table {
-    width: 65%;
     margin-left: 26rem;
   }
 }
 @media (min-width: 1200px) {
   .table-container table {
-    width: 66%;
     margin-left: 28rem;
   }
 }
@@ -764,6 +762,15 @@ table.loading {
   100% {
     transform: rotate(360deg);
   }
+}
+.export-btn {
+  position: absolute;
+  bottom: 12rem;
+  padding: 1rem 3rem;
+  border: none;
+  outline: none;
+  background-color: #289ae7;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

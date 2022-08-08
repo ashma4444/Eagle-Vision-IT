@@ -2,6 +2,9 @@
     <table>
         <div class="circle"></div>
         <thead>
+            <form action="export.php" method="post">
+                <button class="export-btn" name="export">Export to PDF</button>
+            </form>
             <tr>
                 <th>#</th>
                 <th>Name</th>
