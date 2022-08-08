@@ -522,20 +522,33 @@ nav {
 }
 @media (max-width: 599px) {
   .side-bar {
+    width: 30%;
     transform: translateX(-100%);
     opacity: 0;
     transition: transform 0.7s, opacity 1s;
-    width: 40%;
   }
 }
 @media (min-width: 600px) {
   .side-bar {
-    width: 30%;
+    width: 35%;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.7s, opacity 1s;
   }
 }
 @media (min-width: 900px) {
   .side-bar {
-    width: 22%;
+    width: 30%;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.7s, opacity 1s;
+  }
+}
+@media (min-width: 1200px) {
+  .side-bar {
+    width: 20%;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -588,15 +601,19 @@ nav {
 .ham-span {
   width: 20%;
   cursor: pointer;
-  display: none;
 }
 .ham-span i {
   font-size: 2.4rem;
   color: #999999;
 }
-@media (max-width: 599px) {
+@media (min-width: 900px) {
   .ham-span {
     display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .ham-span {
+    display: none;
   }
 }
 
@@ -632,12 +649,34 @@ nav {
   margin-right: 0.8rem;
 }
 
+.user-management {
+  display: flex;
+  align-items: center;
+  background-color: #289ae7;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  justify-content: space-between;
+}
+
+.user-management h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.export-btn {
+  padding: 1rem 3rem;
+  border: none;
+  outline: none;
+}
+.export-btn i {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+}
+
 .table-container {
   font-size: 1.4rem;
   color: #333333;
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
 }
 @media (max-width: 599px) {
   .table-container {
@@ -647,12 +686,14 @@ nav {
 .table-container table {
   background-color: white;
   border-collapse: collapse;
-  padding: 0.8rem 2rem;
   width: fit-content;
   text-align: left;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  overflow-x: scroll;
   display: block;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 5rem;
 }
 .table-container table th {
   font-weight: 700;
@@ -661,23 +702,6 @@ nav {
   padding: 1.2rem 2rem;
   color: #333333;
   border-bottom: 0.2px solid rgba(153, 153, 153, 0.5294117647);
-}
-@media (min-width: 600px) {
-  .table-container table {
-    overflow-x: auto;
-    white-space: nowrap;
-    margin-left: 26rem;
-  }
-}
-@media (min-width: 900px) {
-  .table-container table {
-    margin-left: 26rem;
-  }
-}
-@media (min-width: 1200px) {
-  .table-container table {
-    margin-left: 28rem;
-  }
 }
 
 .action-container i {
@@ -734,7 +758,7 @@ nav {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   font-size: 1.5rem;
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 1rem;
 }
 
 .dropdown:hover .dropdown-content {
@@ -762,15 +786,6 @@ table.loading {
   100% {
     transform: rotate(360deg);
   }
-}
-.export-btn {
-  position: absolute;
-  bottom: 12rem;
-  padding: 1rem 3rem;
-  border: none;
-  outline: none;
-  background-color: #289ae7;
-  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

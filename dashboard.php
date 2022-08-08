@@ -113,9 +113,9 @@
                     </li>
                 </ul>
             </div>
-
         </div>
 
+        <div>
             <?php 
                 $path = __DIR__ . '/views/dashboard/' . $page . '.php';
                 if( file_exists( $path ) ){
@@ -123,6 +123,5 @@
                 }
             ?>
         </div>
-    </div>
 </body>
 </html>

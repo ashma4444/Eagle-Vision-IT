@@ -1,10 +1,17 @@
 <div class="table-container">
     <table>
+        <div class="user-management">
+            <h2>User Management</h2>
+            <form action="export.php" method="post">
+                <button class="export-btn" name="export"> 
+                    <i class="fa-solid fa-file"></i>
+                    Export to PDF
+                </button>
+            </form>
+        </div>
+        
         <div class="circle"></div>
         <thead>
-            <form action="export.php" method="post">
-                <button class="export-btn" name="export">Export to PDF</button>
-            </form>
             <tr>
                 <th>#</th>
                 <th>Name</th>

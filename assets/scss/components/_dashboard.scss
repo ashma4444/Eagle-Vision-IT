@@ -23,18 +23,31 @@ nav{
     background-color: #fff;
     // transition: transform .7s, opacity 1s;
 
-    @include for-phone-only {    
+    @include for-phone-only {   
+        width: 30%; 
         transform: translateX(-100%);
         opacity:0;
         transition: transform .7s, opacity 1s;
-        width: 40%;
     }
     @include for-tablet-portrait-up{    
-        width: 30%;
+        width: 35%;
+        transform: translateX(-100%);
+        opacity:0;
+        transition: transform .7s, opacity 1s;
     }
     @include for-tablet-landscape-up{    
-        width: 22%;
+        width: 30%;
+        transform: translateX(-100%);
+        opacity:0;
+        transition: transform .7s, opacity 1s;
     }
+
+    @include for-desktop-up{    
+        width: 20%;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
 }
 
 .side-heading{
@@ -89,14 +102,18 @@ nav{
 .ham-span{
     width: 20%;
     cursor:pointer;
-    display: none;
+    // display: none;
     i{
         font-size: 2.4rem;
         color: #999999;
     }
-    @include for-phone-only {    
+    @include for-tablet-landscape-up {    
         // visibility: visible;
         display: block;
+    }
+
+    @include for-desktop-up{    
+        display: none;
     }
 }
 
@@ -111,10 +128,6 @@ nav{
         margin-left: 1.5rem;
     }
 }
-
-// .dashboard-container{
-//     display: flex;
-// }
 
 .dashboard-p{
     font-size: $p-size;
@@ -136,12 +149,36 @@ nav{
     }
 }
 
+.user-management{
+    display: flex;
+    align-items: center;
+    background-color: #289ae7;
+    // width: 76.5rem;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+    // margin-top: 6rem;
+    justify-content: space-between;
+}
+
+.user-management h2{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffff;
+}
+
+.export-btn{
+    padding: 1rem 3rem;
+    border: none;
+    outline: none;
+    i{
+        font-size: 1.6rem;
+        margin-right: 1rem;
+    }
+}
+
 .table-container{
     font-size: 1.4rem;
     color: #333333;
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
 
     @include for-phone-only {    
        width: 100%;
@@ -150,14 +187,17 @@ nav{
     table{
         background-color: #ffff;
         border-collapse: collapse;
-        padding: .8rem 2rem;
+        // padding: .8rem 2rem;
         width: fit-content;
         text-align: left;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        // overflow:auto;
-        overflow-x:scroll;
         display: block;
-        
+        margin: 0 auto;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-top: 5rem;
+
+
         th{
             font-weight: 700;
         }
@@ -167,24 +207,6 @@ nav{
             color: #333333;
             border-bottom: .2px solid #99999987;
         }
-
-        @include for-tablet-portrait-up{    
-            // width: 55%;
-            // display: block;
-            // display: flex;
-            overflow-x: auto;
-            white-space: nowrap;
-            margin-left: 26rem;
-        }
-        @include for-tablet-landscape-up{    
-            // width: 65%;
-            margin-left: 26rem;
-        }
-    
-       @include for-desktop-up{    
-        // width: 66%;
-        margin-left: 28rem;
-       }
     }
 }
 
@@ -247,7 +269,7 @@ nav{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     font-size: 1.5rem;
-    padding: 2rem 2rem 1rem 2rem;
+    padding: 1rem;
   }
   
   .dropdown:hover .dropdown-content {
@@ -279,13 +301,5 @@ table.loading{
     }
 }
 
-.export-btn{
-    position: absolute;
-    bottom: 12rem;
-    padding: 1rem 3rem;
-    border: none;
-    outline: none;
-    background-color: #289ae7;
-    color: #ffff;
-}
+
 
