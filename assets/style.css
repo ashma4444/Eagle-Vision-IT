@@ -674,6 +674,10 @@ nav {
   margin-right: 1rem;
 }
 
+.export-btn:hover {
+  cursor: pointer;
+}
+
 .table-container {
   font-size: 1.4rem;
   color: #333333;

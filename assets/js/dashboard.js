@@ -23,7 +23,17 @@ $( document ).ready(function() {
 
 
     $(".update-btn").click(function(){
-        
+        // var role = $('#role').text();
+        // alert(role);
+        // return false;
+
+        // if(role === "Admin"){
+        //     alert("You can edit")
+        // }
+        // else{
+        //     alert("You can't edit")
+        //     return false;
+        // }
     });
 
 

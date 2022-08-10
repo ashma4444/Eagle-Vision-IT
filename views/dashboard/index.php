@@ -2,14 +2,14 @@
     <table>
         <div class="user-management">
             <h2>User Management</h2>
-            <form action="export.php" method="post">
+            <form action="export.php" method="post" target="_blank">
                 <button class="export-btn" name="export"> 
                     <i class="fa-solid fa-file"></i>
                     Export to PDF
                 </button>
             </form>
         </div>
-        
+
         <div class="circle"></div>
         <thead>
             <tr>
@@ -43,7 +43,7 @@
                                     echo date( 'd/m/Y', $date );
                                 ?>
                             </td>
-                            <td><?php echo $d['role']; ?></td>
+                            <td id="role"><?php echo $d['role']; ?></td>
                             <td class="action-container">
                                     <a href="signup.php?id=<?php echo $d['id']; ?>" class="update-btn"><i class="fa-regular fa-gear"></i></a> 
                                     <a href="controller/form-action.php?id=<?php echo $d['id']; ?>" class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></a>

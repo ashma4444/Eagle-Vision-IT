@@ -28,15 +28,14 @@
 
         $content =  '';
         $content .= '
-        <table>
-        <div class="circle"></div>
+        <table style="border: 1px solid #000; padding: 5px;">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Date Created</th>
-                <th>Role</th>
+                <th style="color: #333333; border-bottom: .2px solid #99999987; font-size: 12px; font-weight: bold; width: 30px">#</th>
+                <th style="color: #333333; border-bottom: .2px solid #99999987; font-size: 12px; font-weight: bold; width: 130px">Name</th>
+                <th style="color: #333333; border-bottom: .2px solid #99999987; font-size: 12px; font-weight: bold; width: 150px">Email</th>
+                <th style="color: #333333; border-bottom: .2px solid #99999987; font-size: 12px; font-weight: bold; width: 100px">Date Created</th>
+                <th style="color: #333333; border-bottom: .2px solid #99999987; font-size: 12px; font-weight: bold; width: 80px">Role</th>
             </tr>
         </thead>
         <tbody>';
@@ -45,23 +44,23 @@
         if( !empty( $data ) ):
             foreach( $data as $key => $d ):
         $content .= '<tr>
-                        <td> ';
+                    <td style="width: 30px"> ';
         $content .= $key+1; 
         $content .= '</td>
-                        <td>';
+                    <td style="width: 130px">';
         $content .=  $d[ 'name' ];
         $content .= '</td>
-                        <td>'; 
+                    <td style="width: 150px">'; 
         $content .= $d['email']; 
         $content .= '</td>
-                        <td>';
+                    <td style="width: 100px">';
         $date = strtotime( $d['created_date'] );
         $content .= date( 'd/m/Y', $date );
         $content .= '</td>
-                        <td>'; 
+                    <td style="width: 80px">'; 
         $content .= $d['role']; 
         $content .= '</td>
-                        </tr>';
+                    </tr>';
         endforeach;
         endif;           
         $content .= '</tbody>
